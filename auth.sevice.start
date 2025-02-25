@@ -1,9 +1,0 @@
-sudo cp ./auth.service /etc/systemd/system/auth.service
-sudo systemctl daemon-reload
-sudo systemctl enable auth.service
-sudo systemctl start auth.service
-sudo systemctl stop auth.service
-sudo systemctl restart auth.service
-sudo systemctl status auth.service
-sudo journalctl -xeu auth.service
-sudo journalctl -fxeu auth.service

@@ -1,4 +1,3 @@
-import 'package:souldyor/model/orders.dart';
 import 'package:souldyor/souldyor.dart';
 
 /// This type initializes an application.
@@ -7,6 +6,7 @@ import 'package:souldyor/souldyor.dart';
 /// database connections. See http://conduit.io/docs/http/channel/.
 class SouldyorChannel extends ApplicationChannel {
   late ManagedContext context;
+  late AuthServer authServer;
 
   /// Initialize services in this method.
   ///
@@ -21,6 +21,9 @@ class SouldyorChannel extends ApplicationChannel {
 
     final config = SouldyorConfiguration(options!.configurationFilePath!);
     context = contextWithConnectionInfo(config.database!);
+
+    final delegate = ManagedAuthDelegate<Accounts>(context);
+    authServer = AuthServer(delegate);
   }
 
   /// Construct the request channel.
@@ -35,6 +38,7 @@ class SouldyorChannel extends ApplicationChannel {
 
     router
         .route("/orders/[:id]")
+        .link(() => Authorizer.basic(authServer))!
         .link(() => ManagedObjectController<Orders>(context));
 
     return router;

@@ -1,0 +1,9 @@
+sudo cp ./souldyor.service /etc/systemd/system/souldyor.service
+sudo systemctl daemon-reload
+sudo systemctl enable souldyor.service
+sudo systemctl start souldyor.service
+sudo systemctl stop souldyor.service
+sudo systemctl restart souldyor.service
+sudo systemctl status souldyor.service
+sudo journalctl -xeu souldyor.service
+sudo journalctl -fxeu souldyor.service

@@ -25,10 +25,10 @@ class _Orders {
 
   double? orderClosePrice; //Цена закрытия выбранного ордера
   DateTime? orderCloseTime; //Время закрытия выбранного ордера
-  String? orderComment; // Комментарий выбранного ордера
+  String? orderComment; // Комментарий выбранного ордера "SoulDyor_GolD_buy_"+номер+тип
   double? orderCommission; // значение рассчитанной комиссии выбранного ордера
   double? orderLots; // количество лотов выбранного ордера
-  int? orderMagicNumber; // идентификационное ("магическое") число выбранного ордера
+  int? orderMagicNumber; // идентификационное ("магическое") число выбранного ордера = 3644
   double? orderOpenPrice; // цену открытия выбранного ордера
   DateTime? orderOpenTime; //время открытия выбранного ордера
   double? orderProfit; //значение чистой прибыли выбранного ордера

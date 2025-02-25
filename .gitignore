@@ -30,6 +30,7 @@ doc/api/
 config.src.yaml
 config.yaml
 database.yaml
+add.client
 
 #ssl
 ssl/
