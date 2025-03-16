@@ -26,7 +26,7 @@ sudo chmod +x /etc/profile.d/mypath.sh
 sudo reboot
 ```
 
-Запуск сервиса `conduit serve` из дириктории файла `bin/main.dart`. 
+Запуск сервиса `conduit serve --port=8888` из дириктории файла `bin/main.dart`. 
 
 В файле `config.yaml` находятся данные для подключения к БД. Для обновление моделей в БД используйте следующеие команды:
 
@@ -51,7 +51,7 @@ conduit auth add-client --id mt_souldyor --secret СЕКРЕТНЫЙ_КЛЮЧ
 Подключение к PostgreSQL для тестов производится к базе `conduit_test_db`. 
 Для запуска тестирования запустите:
 
-```
+``` 
 dart pub run test
 ```
 

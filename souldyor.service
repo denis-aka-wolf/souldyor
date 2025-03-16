@@ -9,7 +9,7 @@ Type=simple
 Restart=always
 RestartSec=5
 WorkingDirectory=/home/denis/souldyor/
-ExecStart=conduit serve --isolates=8
+ExecStart=conduit serve --isolates=8 --port=80
  
 [Install]
 WantedBy=network-online.target
