@@ -40,7 +40,7 @@ class SouldyorChannel extends ApplicationChannel {
         .route("/orders/[:id]")
         .link(() => Authorizer.basic(authServer))!
         .link(() => OrdersController(context, authServer));
-    
+
     /* этот роутинг необоходим для получения файлов из корня*/
     router
         .route("/*")
